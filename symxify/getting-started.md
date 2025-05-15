@@ -43,11 +43,14 @@ You will need to whitelist the IP address [209.71.81.74](209.71.81.74), which is
 
 ### Building with Symxify
 
-Once you're successfully tested your connection, you're ready to build!
+Once you're successfully tested your connection, you're ready to build! Check out the [demo](https://github.com/memberwise/symxify) folder in the Symixfy repository for a quickstart.
 
 There are two official clients for using Symxify.
 
 | Client                                                                                            | Description                                                                                                                                                     |
 | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [symxify-client (typescript)](https://github.com/memberwise/symxify/tree/main/clients/typescript) | Our official TypeScript client. The client is compatible with all TypeScript products (e.g., React, Angular, Vue)                                               |
-| [Symxify.Client (.NET)   ](https://github.com/memberwise/symxify/tree/main/clients/c%23)                  | Our official C# client. The client is compatible with .NET 9 + and supports all the modern features of C#, such as dependency injection and easy configuration. |
+| [Symxify.Client (.NET) ](https://github.com/memberwise/symxify/tree/main/clients/c%23)            | Our official C# client. The client is compatible with .NET 9 + and supports all the modern features of C#, such as dependency injection and easy configuration. |
+
+3rd part clients can be built by utilizing the Operation Map at the [/api/v1/available-operations](https://managed-memberwise-symxify.fly.dev/api/v1/available-operations) endpoint.
+
