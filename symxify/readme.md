@@ -4,7 +4,7 @@ Symxify is the foundation for all of our products at Symxify. It's how we build 
 
 ### What is Symxify?
 
-Symxify is a wrapper around SymXchange. Think of it as a gateway into your gateway.
+Symxify is a wrapper around SymXchange. Think of it as a gateway into your gateway. It's also a feature-rich set of tools to help you build integrations into your credit union core.
 
 ![alt text](/assets/image.png)
 
