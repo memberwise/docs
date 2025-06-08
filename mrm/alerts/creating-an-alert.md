@@ -26,6 +26,8 @@ You can force alerts to appear in a popup window that must be dismissed by enabl
 
 You can add any number of rules to an alert, although it's best to keep your alert rules simple. Rules can be numbers, strings of text or dates.
 
+If "Pop up alert" is toggled on, you can also toggle "Force Acknowledgement". This will add an input in the dialog box that forces the user to type "I UNDERSTAND" before they can move further into the account.
+
 All rules in an alert must evaluate to "true" for the alert to trigger.
 
 The "field" option can be any item within a record, this includes items like warning codes, tracking records, etc. Below are some example alerts to help in your alert creation.
@@ -40,4 +42,17 @@ The "field" option can be any item within a record, this includes items like war
 | AACTIVITYDATE         | activityDate                          | greater_than_or_equal_to | 2020-01-01 | If the account's activity date is on 01/01/2020, this will equate to true                |
 | TRACKING:TYPE         | trackingList.tracking[*].type         | equals                   | 33         | If the account has a tracking type 33, this will equate to true.                         |
 | TRACKING:USERAMOUNT12 | trackingList.tracking[*].userAmount12 | equals                   | 10000      | If the account account has a tracking userAmount12, this will equate to true.            |
-| AFROZENCODE           | frozenCode                            | equals                   | 0          | If the account's frozen code value is "0", this will equate to true.                     |
+
+These rules are very powerful, as they allow you to dig into a record without writing any PowerOn or special code to identify if a condition is true.
+
+Rules can be re-used for flows and other features (coming soon)
+
+Below are some examples of some complex rules
+
+![A complexly defined rule](../../assets/image7.png)
+
+This rule will alert the employee if a tracking 33 is found on the account record (in this credit union's case, this is the RDC tracking record) AND that tracking record userAmount12 is <= 500.00
+
+Just like in a poweron, you can dig deep into the account record from the account. In your account rules, you can add shareList or loanList to your "Full Field" field to bubble deeply nested alerts up to the top.
+
+![alt text](../../assets/image8.png)
