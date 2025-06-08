@@ -34,14 +34,15 @@ The "field" option can be any item within a record, this includes items like war
 
 #### Account
 
-| Field mnemonic        | Field value                           | Operator                 | Value      | Notes                                                                                    |
-| --------------------- | ------------------------------------- | ------------------------ | ---------- | ---------------------------------------------------------------------------------------- |
-| AFROZENCODE           | frozenCode                            | equals                   | 0          | If the account's frozen code value is "0", this will equate to true.                     |
-| WARNING:20            | warningCode[*].warningCode            | contains                 | 5          | If the account record warnings list has a warning code of "5", this will equate to true. |
-| AOPENDATE             | openDate                              | less_than_or_equal_to    | NOW(-180)  | If the account's open date is <= now - 180 days, this will equate to "true"              |
-| AACTIVITYDATE         | activityDate                          | greater_than_or_equal_to | 2020-01-01 | If the account's activity date is on 01/01/2020, this will equate to true                |
-| TRACKING:TYPE         | trackingList.tracking[*].type         | equals                   | 33         | If the account has a tracking type 33, this will equate to true.                         |
-| TRACKING:USERAMOUNT12 | trackingList.tracking[*].userAmount12 | equals                   | 10000      | If the account account has a tracking userAmount12, this will equate to true.            |
+| Field mnemonic        | Field value                                 | Operator                 | Value      | Notes                                                                                         |
+| --------------------- | ------------------------------------------- | ------------------------ | ---------- | --------------------------------------------------------------------------------------------- |
+| AFROZENCODE           | frozenCode                                  | equals                   | 0          | If the account's frozen code value is "0", this will equate to true.                          |
+| WARNING:20            | warningCode[*].warningCode                  | contains                 | 5          | If the account record warnings list has a warning code of "5", this will equate to true.      |
+| AOPENDATE             | openDate                                    | less_than_or_equal_to    | NOW(-180)  | If the account's open date is <= now - 180 days, this will equate to "true"                   |
+| AACTIVITYDATE         | activityDate                                | greater_than_or_equal_to | 2020-01-01 | If the account's activity date is on 01/01/2020, this will equate to true                     |
+| TRACKING:TYPE         | trackingList.tracking[*].type               | equals                   | 33         | If the account has a tracking type 33, this will equate to true.                              |
+| TRACKING:USERAMOUNT12 | trackingList.tracking[*].userAmount12       | equals                   | 10000      | If the account has ANY tracking with an userAmount12, this will equate to true.               |
+| TRACKING:USERAMOUNT12 | trackingList.tracking[type=33].userAmount12 | equals                   | 10000      | If the account a tracking type 33 with userAmount12 equal to 10000, this will equate to true. |
 
 These rules are very powerful, as they allow you to dig into a record without writing any PowerOn or special code to identify if a condition is true.
 
@@ -49,10 +50,11 @@ Rules can be re-used for flows and other features (coming soon)
 
 Below are some examples of some complex rules
 
-![A complexly defined rule](../../assets/image7.png)
 
 This rule will alert the employee if a tracking 33 is found on the account record (in this credit union's case, this is the RDC tracking record) AND that tracking record userAmount12 is <= 500.00
 
-Just like in a poweron, you can dig deep into the account record from the account. In your account rules, you can add shareList or loanList to your "Full Field" field to bubble deeply nested alerts up to the top.
+Just like in a poweron, you can dig deep into the account record from the account, but not the other way around. In your account rules, you can add shareList or loanList to your "Full Field" field to bubble deeply nested alerts up to the top.
 
 ![alt text](../../assets/image8.png)
+
+The account record can access any child records, while child records cannot access parent records. The account tree cascades downward, never upward.
