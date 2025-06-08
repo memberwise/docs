@@ -50,7 +50,6 @@ Rules can be re-used for flows and other features (coming soon)
 
 Below are some examples of some complex rules
 
-
 This rule will alert the employee if a tracking 33 is found on the account record (in this credit union's case, this is the RDC tracking record) AND that tracking record userAmount12 is <= 500.00
 
 Just like in a poweron, you can dig deep into the account record from the account, but not the other way around. In your account rules, you can add shareList or loanList to your "Full Field" field to bubble deeply nested alerts up to the top.
