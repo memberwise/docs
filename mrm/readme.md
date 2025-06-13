@@ -7,3 +7,4 @@ With the Member Relationship Manager, you can create, delete, modify and view an
 Click any of the links below to view the features of the MRM.
 
 [Alerts](alerts/alerts.md)
+[Address Verification](verification/address/index.md)

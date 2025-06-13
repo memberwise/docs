@@ -39,7 +39,10 @@ Once the fields are filled out, click the "Create Connection" button at the top 
 
 Once you've created a connection, you can test it at any time by clicking the "Test Connection" button at the top of the page.
 
-You will need to whitelist the IP address [209.71.81.74](209.71.81.74), which is the static egress IP for the application. The test will attempt to read a dummy account with a incorrect device information and an administrative password. So long as the server receives some SOAP back, the connection itself is declared as "OK". If the server receives any HTTP error or is unable to reach the Symxchange server, the connection is declared as "BAD". If your connection fails, you will see the most recent error message at the top of the page. You can also view the logs in the Symxify Logs page to view all connection attempts.
+You will need to whitelist the following set of IP addresses
+- [209.71.81.74](209.71.81.74)
+
+which are the static egress IPs for Symxify. The test will attempt to read a dummy account with a incorrect device information and an administrative password. So long as the server receives some SOAP back, the connection itself is declared as "OK". If the server receives any HTTP error or is unable to reach the Symxchange server, the connection is declared as "BAD". If your connection fails, you will see the most recent error message at the top of the page. You can also view the logs in the Symxify Logs page to view all connection attempts.
 
 ### Building with Symxify
 
